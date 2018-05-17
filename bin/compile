@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# set -e: don't tolerate non-zero exit status for any command
+set -e
+
 indent() {
   sed -u 's/^/       /'
 }
