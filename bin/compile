@@ -11,11 +11,11 @@ DOWNLOAD_URL="https://www.johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit
 
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 
-cd $BUILD_DIR
+cd $BUILD_DIR || exit
 mkdir -p $VENDOR_DIR
-cd $VENDOR_DIR
+cd $VENDOR_DIR || exit
 mkdir -p ffmpeg
-cd ffmpeg
+cd ffmpeg || exit
 curl -L --silent $DOWNLOAD_URL | tar xJ --strip-components=1
 
 echo "exporting PATH" | indent
